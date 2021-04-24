@@ -53,5 +53,17 @@ export const updateEvent = event => dispatch => {
 };
 
 export const deleteEvent = event => dispatch => {
+  const localEvent = JSON.parse(localStorage.getItem('userEvents'));
+
+  let deletedEvents;
+  if (localEvent && localEvent[event.date]) {
+    deletedEvents = localEvent[event.date].filter(ev => ev.id !== event.id);
+  }
+
+  localStorage.setItem(
+    'userEvents',
+    JSON.stringify({ ...localEvent, [event.date]: deletedEvents }),
+  );
+
   dispatch({ type: DELETE_EVENT, payload: event });
 };
