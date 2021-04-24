@@ -1,0 +1,14 @@
+@mixin font-face($font, $path, $weight, $style) {
+  @font-face {
+    font-family: $font;
+    src: local($font), url('../fonts/#{$font}/#{$path}.ttf') format('ttf');
+    font-weight: $weight;
+    font-style: $style;
+    font-stretch: normal;
+  }
+}
+
+@include font-face('NotoSerif', 'NotoSerif-Regular', 400, normal);
+@include font-face('NotoSerif', 'NotoSerif-Bold', 700, normal);
+@include font-face('NotoSerif', 'NotoSerif-Italic', 400, italic);
+@include font-face('NotoSerif', 'NotoSerif-BoldItalic', 700, italic);

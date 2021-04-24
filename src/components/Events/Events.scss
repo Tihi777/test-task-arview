@@ -1,0 +1,22 @@
+.events {
+  width: 100%;
+
+  &__card-actions {
+    margin-left: auto;
+    display: flex;
+    opacity: 0;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__card-action {
+    margin: 0 4px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
